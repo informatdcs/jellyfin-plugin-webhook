@@ -12,7 +12,7 @@
         "changelog": "base build",
         "targetAbi": "10.9.7.0",
         "sourceUrl": "https://github.com/informatdcs/jellyfin-plugin-webhook/releases/download/master/webhook_15.0.0.0.zip",
-        "checksum": "8837655727c81922b11df6cc3d1af463",
+        "checksum": "b4124c884a837992331987d8cdd19fc0",
         "timestamp": "2024-10-27T00:00:00Z"
       }
     ]
