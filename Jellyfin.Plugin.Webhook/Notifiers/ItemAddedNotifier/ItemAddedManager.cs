@@ -70,7 +70,13 @@ public class ItemAddedManager : IItemAddedManager
                         _itemProcessQueue.AddOrUpdate(key, container, (_, _) => container);
                         continue;
                     }
-
+                    if (!item.HasImage())
+                    {
+                        _logger.LogDebug("Requeue {ItemName}, no image available", item.Name);
+                        container.RetryCount++;
+                        _itemProcessQueue.AddOrUpdate(key, container, (_, _) => container);
+                        continue;
+                    }
                     _logger.LogDebug("Notifying for {ItemName}", item.Name);
 
                     // Send notification to each configured destination.
